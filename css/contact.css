@@ -101,7 +101,9 @@ textarea.form-control
 { min-height: 150px; 
     resize: none; 
 }
-.form-label { display: none; } 
+.form-label { 
+    display: none; 
+} 
 
 
 .btn-send { 
@@ -113,4 +115,12 @@ textarea.form-control
     border-radius: 4px; 
     min-width: 80px; 
 }
-.btn-clear { background-color: #f0f0f0; color: #333; border: 1px solid #ccc; font-weight: bold; padding: 8px 20px; border-radius: 4px; min-width: 80px; }
+.btn-clear { 
+    background-color: #f0f0f0; 
+    color: #333; 
+    border: 1px solid #ccc; 
+    font-weight: bold; 
+    padding: 8px 20px; 
+    border-radius: 4px; 
+    min-width: 80px; 
+}
