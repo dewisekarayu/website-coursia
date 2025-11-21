@@ -11,7 +11,7 @@
   <div class="form-container">
     <div class="form-header">
       <img src="../assets/logo.png" alt="Logo Coursia" class="logo">
-      <h2>Daftar Sekarang Juga</h2>
+      <h2>Daftar Sekarang</h2>
       <p>Isi formulir untuk mendaftarkan diri Anda.</p>
     </div>
 
