@@ -33,7 +33,7 @@
     </form>
 
     <div class="note">
-      <p>Setelah pembayaran, bukti transaksi akan dikirim ke email Anda.</p>
+      <p>Setelah pembayaran, Bukti transaksi akan dikirim ke email Anda.</p>
     </div>
   </div>
 </body>
