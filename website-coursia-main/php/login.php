@@ -13,7 +13,7 @@
       <div class="login-header">
         <img src="../assets/logo.png" alt="Coursia" class="logo">
         <h1>Masuk ke Akun</h1>
-        <p>Gunakan email & password untuk melanjutkan</p>
+        <p>Gunakan Email & Password untuk melanjutkan</p>
       </div>
 
       <form>
