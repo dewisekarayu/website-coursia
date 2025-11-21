@@ -46,7 +46,7 @@
             <div class="chip">Sekretaris</div>
             <div class="chip">Analyst</div>
           </div>
-          <div class="contact">Jakarta<br>keysha.putri@email.com</div>
+          <div class="contact">Jakarta<br>keyshaputri@email.com</div>
           <a href="#" class="linkedin">LINKEDIN</a>
         </div>
 
