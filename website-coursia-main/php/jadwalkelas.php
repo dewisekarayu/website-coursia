@@ -75,7 +75,7 @@
 
     <div class="cta">
       <a href="#">Pesan Kursi Anda Sekarang</a>
-      <p>Untuk jadwal kelas offline atau privat, silakan hubungi admin.</p>
+      <p>Untuk jadwal kelas offline atau privat, Silakan hubungi admin.</p>
     </div>
   </section>
 
