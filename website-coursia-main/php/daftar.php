@@ -22,7 +22,7 @@
       <label>Email</label>
       <input type="email" placeholder="email@domain.com" required>
 
-      <label>No. Handphone</label>
+      <label>No.Handphone</label>
       <input type="tel" placeholder="No. Handphone" required>
 
       <label>Pilih Program</label>
