@@ -38,7 +38,7 @@
             <img src="../assets/kek.jpg" alt="Keysha A. Putri">
             <div class="profile-info">
               <div class="name">Keysha Aura Putri</div>
-              <div class="role">Sekretaris & Analyst Data</div>
+              <div class="role">Sekretaris & Analisis Data</div>
             </div>
           </div>
           <p class="desc">Menyusun laporan sistem dan memastikan kebutuhan data tercatat rapi.</p>
