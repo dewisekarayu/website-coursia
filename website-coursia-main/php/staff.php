@@ -37,7 +37,7 @@
           <div class="profile">
             <img src="../assets/kek.jpg" alt="Keysha A. Putri">
             <div class="profile-info">
-              <div class="name">Keysha A. Putri</div>
+              <div class="name">Keysha Aura Putri</div>
               <div class="role">Sekretaris & Analyst Data</div>
             </div>
           </div>
