@@ -1,0 +1,107 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fbff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 400px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.title {
+  color: #2c6bed;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.level-buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #2c6bed;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.level-buttons button:hover {
+  background-color: #1b4ecb;
+  transform: scale(1.05);
+}
+
+.mentor-card {
+  background-color: #eaf0ff;
+  border-radius: 15px;
+  padding: 20px;
+  animation: fadeIn 0.4s ease;
+  margin-top: 15px;
+}
+
+.mentor-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.info-btn {
+  background-color: #2c6bed;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.info-btn:hover {
+  background-color: #1b4ecb;
+  transform: scale(1.05);
+}
+
+.info-text {
+  background-color: #f0f4ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  color: #333;
+  font-size: 14px;
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.stars {
+  margin: 8px 0;
+  color: #FFD700;
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
+}
