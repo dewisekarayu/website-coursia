@@ -6,10 +6,8 @@ require_once 'db.php';
 $successMessage = $_SESSION['successMessage'] ?? '';
 unset($_SESSION['successMessage']);
 
-// --- PERBAIKAN: Inisialisasi $errorMessage di sini ---
 $errorMessage = ''; 
 
-// Ambil dan bersihkan data, pertahankan nilai saat terjadi error POST
 $fullName = trim($_POST['fullName'] ?? '');
 $email = trim($_POST['email'] ?? '');
 $phone = trim($_POST['phone'] ?? '');
@@ -18,14 +16,12 @@ $message = trim($_POST['message'] ?? '');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
-    // Validasi Sisi Server
     if (empty($fullName) || empty($email) || empty($phone) || empty($topic) || empty($message)) {
         $errorMessage = "Semua field harus diisi.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errorMessage = "Format email tidak valid.";
     } else {
         try {
-            // Cek dan buat tabel jika belum ada
             $createTable = "CREATE TABLE IF NOT EXISTS contact_messages (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 full_name VARCHAR(100) NOT NULL,
@@ -39,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $conn->query($createTable); 
 
-            // Query Insert dengan Prepared Statement
             $stmt = $conn->prepare(
                 "INSERT INTO contact_messages 
                 (full_name, email, phone, topic, message, sent_at, status)

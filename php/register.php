@@ -1,3 +1,50 @@
+<?php
+ob_start();
+require_once '../php/db.php';
+
+$pesan = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nama = trim($_POST['nama']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+    $konfirmasi = trim($_POST['konfirmasi']);
+
+    if ($nama === '' || $email === '' || $password === '' || $konfirmasi === '') {
+        $pesan = "Semua field wajib diisi";
+    } elseif ($password !== $konfirmasi) {
+        $pesan = "Password tidak sama";
+    } else {
+        $cek = mysqli_query($conn, "SELECT * FROM daftar WHERE email='$email'");
+        if (mysqli_num_rows($cek) > 0) {
+            $pesan = "Email sudah terdaftar";
+        } else {
+            $insert = mysqli_query($conn,
+                "INSERT INTO daftar (nama, email, password, konfirmasi_password)
+                 VALUES ('$nama', '$email', '$password', '$konfirmasi')"
+            );
+
+            if ($insert) {
+                $id = mysqli_insert_id($conn);
+
+                mysqli_query($conn,
+                    "INSERT INTO tb_login (id_daftar, email, password)
+                     VALUES ($id, '$email', '$password')"
+                );
+
+                header("Location: login.php");
+                echo "<script>window.location='login.php';</script>";
+                exit;
+            } else {
+                $pesan = "Gagal membuat akun";
+            }
+        }
+    }
+}
+
+ob_end_flush();
+?>
+
 <!doctype html>
 <html lang="id">
 <head>
@@ -8,55 +55,50 @@
 </head>
 
 <body>
+
   <div class="register-page">
     <div class="register-card">
       <div class="register-header">
         <img src="../assets/logo.png" alt="Coursia" class="logo">
         <h1>Buat Akun Baru</h1>
-        <p>Isi data berikut untuk membuat akun</p>
+        <p>Isi data lengkap kamu untuk melanjutkan</p>
       </div>
 
-      <form>
+      <?php 
+      if ($pesan !== "") {
+        echo "<p style='color:red;text-align:center;margin-bottom:10px;'>$pesan</p>";
+      }
+      ?>
+
+      <form method="POST" action="">
         <div class="form-group">
-          <label for="fullname">Nama Lengkap</label>
-          <input type="text" id="fullname" placeholder="Nama lengkap">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Nama lengkap">
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="email@domain.com">
+          <input type="email" id="email" name="email" placeholder="email@domain.com">
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="********">
+          <input type="password" id="password" name="password" placeholder="********">
         </div>
 
         <div class="form-group">
-          <label for="confirm-password">Konfirmasi Password</label>
-          <input type="password" id="confirm-password" placeholder="********">
+          <label for="konfirmasi">Konfirmasi Password</label>
+          <input type="password" id="konfirmasi" name="konfirmasi" placeholder="********">
         </div>
 
-        <button type="submit" class="btn-submit">Daftar</button>
+        <button type="submit" class="btn-submit">Daftar Sekarang</button>
       </form>
 
-      <div class="divider">
-        <hr><span>atau</span><hr>
-      </div>
-
-      <div class="social-buttons">
-        <button class="btn-social">
-          <img src="https://www.svgrepo.com/show/355037/google.svg" alt=""> Google
-        </button>
-        <button class="btn-social">
-          <img src="https://www.svgrepo.com/show/448224/facebook.svg" alt=""> Facebook
-        </button>
-      </div>
-
       <p class="login-link">
-        Sudah punya akun? <a href="login.html">Masuk di sini</a>
+        Sudah punya akun? <a href="login.php">Masuk</a>
       </p>
     </div>
   </div>
+
 </body>
 </html>

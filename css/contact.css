@@ -150,12 +150,12 @@ textarea.form-control {
     display: none;
 }
 
-.form-row { /* New class for rows with gap control */
+.form-row { 
     margin-left: -0.5rem;
     margin-right: -0.5rem;
 }
 
-.form-input-col { /* Was: .col-info */
+.form-input-col { 
     padding-right: 0.5rem;
     padding-left: 0.5rem;
 }
@@ -197,3 +197,33 @@ textarea.form-control {
 .icon-margin-right {
     margin-right: 0.5rem;
 }
+    .feedback-message {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .error-message {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+    .btn-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        background-color: white;
+        cursor: pointer;
+        border-radius: 4px;
+        text-decoration: none;
+        color: inherit;
+    }
+    .btn-social img {
+        width: 20px;
+        height: 20px;
+    }

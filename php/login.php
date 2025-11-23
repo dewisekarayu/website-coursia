@@ -1,3 +1,33 @@
+<?php
+session_start();
+require_once 'db.php'; // pastikan path benar
+
+$pesan = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    if ($email === '' || $password === '') {
+        $pesan = "Email dan password wajib diisi";
+    } else {
+        $query = mysqli_query($conn,
+            "SELECT * FROM tb_login WHERE email='$email' AND password='$password' LIMIT 1"
+        );
+
+        if (mysqli_num_rows($query) === 1) {
+            $data = mysqli_fetch_assoc($query);
+            $_SESSION['id_daftar'] = $data['id_daftar'];
+            $_SESSION['email'] = $data['email'];
+
+            header("Location: homepage.php");
+            exit;
+        } else {
+            $pesan = "Email atau password salah";
+        }
+    }
+}
+?>
 <!doctype html>
 <html lang="id">
 <head>
@@ -8,6 +38,7 @@
 </head>
 
 <body>
+
   <div class="login-page">
     <div class="login-card">
       <div class="login-header">
@@ -16,15 +47,21 @@
         <p>Gunakan email & password untuk melanjutkan</p>
       </div>
 
-      <form>
+      <?php 
+      if ($pesan !== "") {
+        echo "<p style='color:red;text-align:center;margin-bottom:10px;'>$pesan</p>";
+      }
+      ?>
+
+      <form method="POST" action="">
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="email@domain.com">
+          <input type="email" id="email" name="email" placeholder="email@domain.com">
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="********">
+          <input type="password" id="password" name="password" placeholder="********">
         </div>
 
         <div class="form-remember">
@@ -37,23 +74,14 @@
         <button type="submit" class="btn-submit">Masuk</button>
       </form>
 
-      <div class="divider">
-        <hr><span>atau</span><hr>
-      </div>
 
-      <div class="social-buttons">
-        <button class="btn-social">
-          <img src="https://www.svgrepo.com/show/355037/google.svg" alt=""> Google
-        </button>
-        <button class="btn-social">
-          <img src="https://www.svgrepo.com/show/448224/facebook.svg" alt=""> Facebook
-        </button>
-      </div>
+
 
       <p class="register-link">
-        Belum punya akun? <a href="daftar.html">Daftar sekarang</a>
+        Belum punya akun? <a href="daftar.php">Daftar sekarang</a>
       </p>
     </div>
   </div>
+
 </body>
 </html>
