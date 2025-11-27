@@ -1,0 +1,142 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, #eff6ff, #e0e7ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.register-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.register-header h1 {
+  font-size: 22px;
+  color: #1e293b;
+  margin: 0;
+}
+
+.register-header p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #1d4ed8;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.divider hr {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid #cbd5e1;
+}
+
+.divider span {
+  margin: 0 10px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-social {
+  flex: 1;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.btn-social:hover {
+  background-color: #f8fafc;
+}
+
+.btn-social img {
+  width: 18px;
+  height: 18px;
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.login-link a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

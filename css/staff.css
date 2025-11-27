@@ -1,0 +1,122 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 50px 0;
+  color: #1e293b;
+}
+
+h2 {
+  text-align: center;
+  color: #2563eb;
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1.5px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 30px;
+  width: 360px;
+  box-shadow: 0 8px 20px rgba(37,99,235,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(37,99,235,0.15);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.profile img {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  border: 3px solid #93c5fd;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 700;
+  color: #1e3a8a;
+  font-size: 17px;
+}
+
+.role {
+  font-size: 14px;
+  color: #475569;
+}
+
+.desc {
+  font-size: 14px;
+  margin: 12px 0;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.chip {
+  background-color: #eef2ff;
+  color: #2563eb;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #c7d2fe;
+}
+
+.contact {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.linkedin {
+  display: inline-block;
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  background-color: #3b82f6;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.linkedin:hover {
+  background-color: #2563eb;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+  justify-items: center;
+  max-width: 900px;
+}
